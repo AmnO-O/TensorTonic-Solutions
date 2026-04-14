@@ -23,11 +23,11 @@ def conv2d(x, W, b):
         for c_out in range(C_out):
             output[bat, c_out] = b[c_out]
 
-            for c_in in range(C_in):
-                for i in range(KH):
-                    for j in range(KW):
-                        window = x[bat, c_in, i : i + H_out, j : j + W_out]
-                        output[bat, c_out] += W[c_out, c_in, i, j] * window
+            for i in range(KH):
+                for j in range(KW):
+                    term = x[bat, :, i:i+H_out, j:j+W_out] * W[c_out, :, i, j][:, None, None]
+                    output[bat, c_out] += np.sum(term, axis=0)
+        
 
     return output
             
