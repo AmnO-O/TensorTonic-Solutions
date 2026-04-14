@@ -9,6 +9,8 @@ def f1_micro(y_true, y_pred) -> float:
     
     # Write code here
     total_tp = np.sum(y_true == y_pred)
-    total_f = len(y_true) - total_tp
+    total_fp = len(y_true) - total_tp
 
-    return total_tp * 2 / (2 * total_tp + 2 * total_f)
+    ## for this problem total_fp = total_fn because this is multi-class 
+
+    return total_tp * 2 / (2 * total_tp + 2 * total_fp)
