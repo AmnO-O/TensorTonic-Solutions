@@ -25,6 +25,7 @@ def conv2d(x, W, b):
 
             for i in range(KH):
                 for j in range(KW):
+                    # convert (C_out) -> (C_out, 1, 1)
                     term = x[bat, :, i:i+H_out, j:j+W_out] * W[c_out, :, i, j][:, None, None]
                     output[bat, c_out] += np.sum(term, axis=0)
         
