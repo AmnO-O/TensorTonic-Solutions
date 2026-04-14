@@ -10,5 +10,5 @@ def manhattan_distance(x, y):
     x = np.array(x)
     y = np.array(y)
     
-    return int(np.sum(np.abs(x - y)))
+    return np.sum(np.abs(x - y)).item()
     
