@@ -6,7 +6,12 @@ def dot_product(x, y):
     Must return a float.
     """
     # Write code here
-    x = np.array(x)
-    y = np.array(y)
 
-    return np.dot(x, y)
+    dot = 0
+
+    if len(x) != len(y):
+        raise ValueError
+
+    for i in range(len(x)):
+        dot += x[i] * y[i]
+    return dot 
