@@ -8,6 +8,6 @@ def relu(x):
 
     x = np.array(x)
 
-    x = np.maximum(x, 0)
+    x = np.where(x >= 0, x, 0)
     
-    return np.array(x)
+    return x
