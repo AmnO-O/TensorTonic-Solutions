@@ -54,5 +54,5 @@ def batch_norm_block(x, W1, W2, gamma1, beta1, gamma2, beta2, mode):
         x = x @ W2
         
         x = x + shortcut
-    res_rounded = np.round(x, 4).tolist()
-    return {'output' : res_rounded, 'mode': mode}
+
+    return {'output' : x, 'mode': mode}
