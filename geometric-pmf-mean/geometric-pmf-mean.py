@@ -7,7 +7,8 @@ def geometric_pmf_mean(k, p):
     # Write code here
     
     mean = 1 / p 
-    k = [((1 - p) ** (x - 1)) * p for x in k]
-    k = np.array(k)
+    k_array = np.array(k)
     
-    return k, mean 
+    pmf = ((1 - p) ** (k_array - 1)) * p
+    
+    return pmf, mean 
