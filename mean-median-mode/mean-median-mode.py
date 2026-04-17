@@ -12,13 +12,12 @@ def mean_median_mode(x):
     if n == 0:
         return None 
         
-    mean = 0 
+    mean = sum(x) 
     mode = 0 
     median = 0 
     counts = {}
 
     for val in x: 
-        mean = mean + val
         counts[val] = counts.get(val, 0) + 1
 
     if n % 2 == 1:
